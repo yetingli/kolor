@@ -600,7 +600,7 @@
                 Channel.create(Octet, 'green', 'g'),
                 Channel.create(Octet, 'blue', 'b')
             ],
-            pattern: /rgb\(\s*([^,]+?)\s*,\s*([^,]+?)\s*,\s*([^\)]+?)\s*\)/i
+            pattern: /rgb\(\s*([^,\s]+?)\s*,\s*([^,\s]+?)\s*,\s*([^\)\s]+?)\s*\)/i
         },
         RGBA: {
             channels: [
@@ -609,7 +609,7 @@
                 Channel.create(Octet, 'blue', 'b'),
                 Channel.create(Ratio, 'alpha', 'a')
             ],
-            pattern: /rgba\(\s*([^,]+?)\s*,\s*([^,]+?)\s*,\s*([^,]+?)\s*,\s*([^\)]+?)\s*\)/i
+            pattern: /rgba\(\s*([^,\s]+?)\s*,\s*([^,\s]+?)\s*,\s*([^,\s]+?)\s*,\s*([^\)\s]+?)\s*\)/i
         },
         HSL: {
             channels: [
@@ -617,7 +617,7 @@
                 Channel.create(Percent, 'saturation', 's'),
                 Channel.create(Percent, 'lightness', 'l')
             ],
-            pattern: /hsl\(\s*([^,]+?)\s*,\s*([^,]+?)\s*,\s*([^\)]+?)\s*\)/i
+            pattern: /hsl\(\s*([^,\s]+?)\s*,\s*([^,\s]+?)\s*,\s*([^\)\s]+?)\s*\)/i
         },
         HSLA: {
             channels: [
@@ -626,7 +626,7 @@
                 Channel.create(Percent, 'lightness', 'l'),
                 Channel.create(Ratio, 'alpha', 'a')
             ],
-            pattern: /hsla\(\s*([^,]+?)\s*,\s*([^,]+?)\s*,\s*([^,]+?)\s*,\s*([^\)]+?)\s*\)/i
+            pattern: /hsla\(\s*([^,\s]+?)\s*,\s*([^,\s]+?)\s*,\s*([^,\s]+?)\s*,\s*([^\)\s]+?)\s*\)/i
         },
         HSV: {
             channels: [
@@ -634,7 +634,7 @@
                 Channel.create(Percent, 'saturation', 's'),
                 Channel.create(Percent, 'value', 'v')
             ],
-            pattern: /hsv\(\s*([^,]+?)\s*,\s*([^,]+?)\s*,\s*([^\)]+?)\s*\)/i
+            pattern: /hsv\(\s*([^,\s]+?)\s*,\s*([^,\s]+?)\s*,\s*([^\)\s]+?)\s*\)/i
         },
         HSVA: {
             channels: [
@@ -643,7 +643,7 @@
                 Channel.create(Percent, 'value', 'v'),
                 Channel.create(Ratio, 'alpha', 'a')
             ],
-            pattern: /hsva\(\s*([^,]+?)\s*,\s*([^,]+?)\s*,\s*([^,]+?)\s*,\s*([^\)]+?)\s*\)/i
+            pattern: /hsva\(\s*([^,\s]+?)\s*,\s*([^,\s]+?)\s*,\s*([^,\s]+?)\s*,\s*([^\)\s]+?)\s*\)/i
         },
         HWB: {
             channels: [
@@ -652,14 +652,14 @@
                 Channel.create(Percent, 'blackness', 'b'),
                 Channel.create(Ratio, 'alpha', 'a', {optional: true})
             ],
-            pattern: /hwb\(\s*([^,]+?)\s*,\s*([^,]+?)\s*,\s*([^,\)]+?)(?:\s*,\s*([^\)]+?))?\s*\)/i
+            pattern: /hwb\(\s*([^,\s]+?)\s*,\s*([^,\s]+?)\s*,\s*([^,\)\s]+?)(?:\s*,\s*([^\)\s]+?))?\s*\)/i
         },
         GRAY: {
             channels: [
                 Channel.create(Octet, 'shade', 's'),
                 Channel.create(Ratio, 'alpha', 'a')
             ],
-            pattern: /gray\(\s*([^,\)]+?)(?:\s*,\s*([^\)]+?))?\s*\)/i
+            pattern: /gray\(\s*([^,\)\s]+?)(?:\s*,\s*([^\)\s]+?))?\s*\)/i
         },
         CMYK: {
             channels: [
@@ -669,7 +669,7 @@
                 Channel.create(Ratio, 'black', ['b', 'k']),
                 Channel.create(Ratio, 'alpha', 'a', {optional: true})
             ],
-            pattern: /(?:device-)?cmyk\(\s*([^,]+?)\s*,\s*([^,]+?)\s*,\s*([^,]+?)\s*,\s*([^,]+?)(?:\s*,\s*([^\)]+?))?\s*\)/i
+            pattern: /(?:device-)?cmyk\(\s*([^,\s]+?)\s*,\s*([^,\s]+?)\s*,\s*([^,\s]+?)\s*,\s*([^,\s]+?)(?:\s*,\s*([^\)\s]+?))?\s*\)/i
         }
     };
 
